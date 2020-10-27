@@ -1,25 +1,24 @@
 <template>
-  <div class="mini-toast">
-      <span class="toast-msg">{{propData}}</span>
+  <div v-show="visible" class="sever-toast">
+      <span class="toast-msg">{{msg}}</span>
   </div>
 </template>
 <script>
 export default {
-  name:"mini-toast",
-  props:{
-    propData:{
-        type: String,
-        default: '默认值'
-    }
-  },
+  name:"sever-toast",
   data(){
     return {
+      visible:true,
+      msg:'',
+      timeout:''
     }
   },
+  methods:{
+  }
 }
 </script>
 <style lang="scss">
-  .mini-toast{
+  .sever-toast{
     display: flex;
     justify-content: center;
     align-items: center;
