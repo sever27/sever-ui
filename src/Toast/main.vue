@@ -1,6 +1,6 @@
 <template>
   <div v-show="visible" class="sever-toast">
-      <span class="toast-msg">{{msg}}</span>
+      <span class="toast-msg" @click="aaa">{{msg}}</span>
   </div>
 </template>
 <script>
@@ -8,16 +8,29 @@ export default {
   name:"sever-toast",
   data(){
     return {
-      visible:true,
-      msg:'',
-      timeout:''
+      visible:false,
+      msg:'123',
+      timeout:'',
+      resolve:'',
+      reject:'',
     }
   },
   methods:{
+    install(){
+
+      return new Promise((resolve, reject) => {
+        this.resolve = resolve;
+        this.reject = reject;
+      });
+    },
+    aaa(){
+      this.msg = '哈哈哈哈哈'
+      console.log(this)
+    }
   }
 }
 </script>
-<style lang="scss">
+<style >
   .sever-toast{
     display: flex;
     justify-content: center;
