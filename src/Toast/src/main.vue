@@ -1,6 +1,6 @@
 <template>
-  <div v-show="visible" class="sever-toast">
-      <span class="toast-msg" @click="aaa">{{msg}}</span>
+  <div v-if="visible" class="sever-toast">
+      <span class="toast-msg" >{{msg}}</span>
   </div>
 </template>
 <script>
@@ -9,24 +9,19 @@ export default {
   data(){
     return {
       visible:false,
-      msg:'123',
-      timeout:'',
-      resolve:'',
-      reject:'',
+      msg:'默认值',
+      duration:'3000',
     }
   },
   methods:{
-    install(){
+    close(){
+      setTimeout(() => {
+        this.visible = false;
+      }, this.duration);
 
-      return new Promise((resolve, reject) => {
-        this.resolve = resolve;
-        this.reject = reject;
-      });
-    },
-    aaa(){
-      this.msg = '哈哈哈哈哈'
-      console.log(this)
     }
+  },
+  mounted(){
   }
 }
 </script>

@@ -1,6 +1,6 @@
 {
   "name": "sever-ui",
-  "version": "1.0.24",
+  "version": "1.0.28",
   "description": "",
   "main":"./dist/sever-ui.min.js",
   "scripts": {

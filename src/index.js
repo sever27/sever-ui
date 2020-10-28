@@ -5,7 +5,6 @@ const install = function(Vue) {
   Vue.prototype.$toast = Toast
 
 }
-console.log(typeof window !== 'undefined' , window.Vue)
 
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
@@ -14,4 +13,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install,
   Toast,
+  
 }
